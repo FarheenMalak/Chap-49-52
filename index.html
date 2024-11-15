@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Features</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Question 1: Signup Form -->
+    <h2>Signup Form</h2>
+    <form id="signupForm" onsubmit="submitForm(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+
+    <h3>Form Data:</h3>
+    <div id="formData"></div>
+
+    <hr>
+
+    <!-- Question 2: Read More Feature -->
+    <h2>Item Details</h2>
+    <div class="item">
+        <h3>Item 1</h3>
+        <p class="item-summary">This is a short description...</p>
+        <button onclick="toggleDetails('item1')">Read More</button>
+        <div id="item1" class="item-details" style="display: none;">
+            <p>This is the full description of the item. It contains more detailed information.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Question 3: Student Table with Add, Edit, and Delete -->
+    <h2>Student Details</h2>
+    <form id="studentForm" onsubmit="addStudent(event)">
+        <label for="studentName">Name:</label><br>
+        <input type="text" id="studentName" required><br><br>
+
+        <label for="studentAge">Age:</label><br>
+        <input type="number" id="studentAge" required><br><br>
+
+        <input type="submit" value="Add Student">
+    </form>
+
+    <h3>Student Records:</h3>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Student rows will be added dynamically here -->
+        </tbody>
+    </table>
+
+    <div id="editForm" style="display: none;">
+        <h3>Edit Student</h3>
+        <form id="editStudentForm" onsubmit="editStudent(event)">
+            <label for="editStudentName">Name:</label><br>
+            <input type="text" id="editStudentName" required><br><br>
+
+            <label for="editStudentAge">Age:</label><br>
+            <input type="number" id="editStudentAge" required><br><br>
+
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
